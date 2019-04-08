@@ -1,0 +1,12 @@
+/*List the models of any type having the highest price of all products present in the database.*/
+
+with max
+as 
+(select model, price from pc
+union 
+select model, price from laptop
+union 
+select model, price from printer)
+
+select model from max
+where price = (select max(price) from max)
