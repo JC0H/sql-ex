@@ -1,0 +1,4 @@
+select o.ship
+from outcomes o
+ join battles b on b.name = o.battle
+where o.result = 'sunk' and b.name = 'North Atlantic'
